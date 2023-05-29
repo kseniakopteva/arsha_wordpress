@@ -113,6 +113,21 @@ function arsha_customize_register($wp_customize)
         )
     );
 
+
+    $wp_customize->add_setting('arsha_hero-image', array());
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'arsha_hero-image',
+            array(
+                'label'      => __('Hero Image', 'arsha'),
+                'section'    => 'title_tagline',
+                'settings'   => 'arsha_hero-image',
+                'priority'   => 10,
+            )
+        )
+    );
+
     // ..repeat ->add_setting() and ->add_control() for mytheme_company-division
 }
 add_action('customize_register', 'arsha_customize_register');
