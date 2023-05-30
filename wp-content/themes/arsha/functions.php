@@ -179,6 +179,47 @@ function arsha_register_types()
         'supports'            => ['title'], // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
         'has_archive'         => true
     ]);
+
+    register_post_type('portfolio_item', [
+        'labels' => [
+            'name'               => 'Portfolio items',
+            'singular_name'      => 'Portfolio item',
+            'add_new'            => 'Add portfolio item',
+            'add_new_item'       => 'Add portfolio item',
+            'edit_item'          => 'Edit portfolio item',
+            'new_item'           => 'New portfolio item',
+            'view_item'          => 'View portfolio item',
+            'search_items'       => 'Search portfolio item',
+            'not_found'          => 'No portfolio item found',
+            'not_found_in_trash' => 'No portfolio item in trash',
+            'parent_item_colon'  => '',
+            'menu_name'          => 'Portfolio items',
+        ],
+        'public'                 => true,
+        'menu_position'       => 20,
+        'menu_icon'           => 'dashicons-images-alt2',
+        'hierarchical'        => false,
+        'supports'            => ['title'], // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+        'has_archive'         => true
+    ]);
+
+    register_taxonomy('portfolio_item_type', ['portfolio_item'], [
+        'labels'                => [
+            'name'              => 'Portfolio item types',
+            'singular_name'     => 'Portfolio item type',
+            'search_items'      => 'Search portfolio item types',
+            'all_items'         => 'All portfolio item types',
+            'view_item '        => 'View portfolio item type',
+            'edit_item'         => 'Edit portfolio item type',
+            'update_item'       => 'Update portfolio item type',
+            'add_new_item'      => 'Add New portfolio item type',
+            'new_item_name'     => 'New portfolio item type name',
+            'menu_name'         => 'Portfolio item type'
+        ],
+        'description'           => 'App / Card / Web',
+        'public'                => true,
+        'hierarchical'          => true,
+    ]);
 }
 
 
