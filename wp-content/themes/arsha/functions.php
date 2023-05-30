@@ -156,6 +156,29 @@ function arsha_register_types()
         'supports'            => ['title'], // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
         'has_archive'         => true
     ]);
+
+    register_post_type('services', [
+        'labels' => [
+            'name'               => 'Services',
+            'singular_name'      => 'Services',
+            'add_new'            => 'Add services',
+            'add_new_item'       => 'Add services',
+            'edit_item'          => 'Edit services',
+            'new_item'           => 'New service',
+            'view_item'          => 'View services',
+            'search_items'       => 'Search services',
+            'not_found'          => 'No services found',
+            'not_found_in_trash' => 'No services in trash',
+            'parent_item_colon'  => '',
+            'menu_name'          => 'Services',
+        ],
+        'public'                 => true,
+        'menu_position'       => 20,
+        'menu_icon'           => 'dashicons-heart',
+        'hierarchical'        => false,
+        'supports'            => ['title'], // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+        'has_archive'         => true
+    ]);
 }
 
 
