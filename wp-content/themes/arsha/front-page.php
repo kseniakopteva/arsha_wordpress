@@ -308,81 +308,85 @@
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
-                <h2>Team</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                <?php echo get_post(161)->post_content ?>
             </div>
 
-            <div class="row">
+            <?php $team = get_posts(['post_type' => 'team_members', 'numberposts' => 4]);
+            if (!empty($team)) :
+            ?>
 
-                <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="member d-flex align-items-start">
-                        <div class="pic"><img src="<?php echo arsha_assets_path('assets/img/team/team-1.jpg') ?>" class="img-fluid" alt=""></div>
-                        <div class="member-info">
-                            <h4>Walter White</h4>
-                            <span>Chief Executive Officer</span>
-                            <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
-                            <div class="social">
-                                <a href=""><i class="ri-twitter-fill"></i></a>
-                                <a href=""><i class="ri-facebook-fill"></i></a>
-                                <a href=""><i class="ri-instagram-fill"></i></a>
-                                <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                <div class="row">
+
+                    <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="member d-flex align-items-start">
+                            <div class="pic"><img src="<?php echo get_field('photo', $team[0]->ID)['url'] ?>" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4><?php echo get_the_title($team[0]->ID) ?></h4>
+                                <span><?php echo get_field('job_position', $team[0]->ID) ?></span>
+                                <p><?php echo get_field('description', $team[0]->ID) ?></p>
+                                <div class="social">
+                                    <a href="<?php echo get_field('twitter_link', $team[0]->ID) ?>"><i class="ri-twitter-fill"></i></a>
+                                    <a href="<?php echo get_field('facebook_link', $team[0]->ID) ?>"><i class="ri-facebook-fill"></i></a>
+                                    <a href="<?php echo get_field('instagram_link', $team[0]->ID) ?>"><i class="ri-instagram-fill"></i></a>
+                                    <a href="<?php echo get_field('linkedin_link', $team[0]->ID) ?>"> <i class="ri-linkedin-box-fill"></i> </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-lg-6 mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="member d-flex align-items-start">
-                        <div class="pic"><img src="<?php echo arsha_assets_path('assets/img/team/team-2.jpg') ?>" class="img-fluid" alt=""></div>
-                        <div class="member-info">
-                            <h4>Sarah Jhonson</h4>
-                            <span>Product Manager</span>
-                            <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
-                            <div class="social">
-                                <a href=""><i class="ri-twitter-fill"></i></a>
-                                <a href=""><i class="ri-facebook-fill"></i></a>
-                                <a href=""><i class="ri-instagram-fill"></i></a>
-                                <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                    <div class="col-lg-6 mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="member d-flex align-items-start">
+                            <div class="pic"><img src="<?php echo get_field('photo', $team[1]->ID)['url'] ?>" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4><?php echo get_the_title($team[1]->ID) ?></h4>
+                                <span><?php echo get_field('job_position', $team[1]->ID) ?></span>
+                                <p><?php echo get_field('description', $team[1]->ID) ?></p>
+                                <div class="social">
+                                    <a href="<?php echo get_field('twitter_link', $team[1]->ID) ?>"><i class="ri-twitter-fill"></i></a>
+                                    <a href="<?php echo get_field('facebook_link', $team[1]->ID) ?>"><i class="ri-facebook-fill"></i></a>
+                                    <a href="<?php echo get_field('instagram_link', $team[1]->ID) ?>"><i class="ri-instagram-fill"></i></a>
+                                    <a href="<?php echo get_field('linkedin_link', $team[1]->ID) ?>"> <i class="ri-linkedin-box-fill"></i> </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="member d-flex align-items-start">
-                        <div class="pic"><img src="<?php echo arsha_assets_path('assets/img/team/team-3.jpg') ?>" class="img-fluid" alt=""></div>
-                        <div class="member-info">
-                            <h4>William Anderson</h4>
-                            <span>CTO</span>
-                            <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
-                            <div class="social">
-                                <a href=""><i class="ri-twitter-fill"></i></a>
-                                <a href=""><i class="ri-facebook-fill"></i></a>
-                                <a href=""><i class="ri-instagram-fill"></i></a>
-                                <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                    <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="member d-flex align-items-start">
+                            <div class="pic"><img src="<?php echo get_field('photo', $team[2]->ID)['url'] ?>" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4><?php echo get_the_title($team[2]->ID) ?></h4>
+                                <span><?php echo get_field('job_position', $team[2]->ID) ?></span>
+                                <p><?php echo get_field('description', $team[2]->ID) ?></p>
+                                <div class="social">
+                                    <a href="<?php echo get_field('twitter_link', $team[2]->ID) ?>"><i class="ri-twitter-fill"></i></a>
+                                    <a href="<?php echo get_field('facebook_link', $team[2]->ID) ?>"><i class="ri-facebook-fill"></i></a>
+                                    <a href="<?php echo get_field('instagram_link', $team[2]->ID) ?>"><i class="ri-instagram-fill"></i></a>
+                                    <a href="<?php echo get_field('linkedin_link', $team[2]->ID) ?>"> <i class="ri-linkedin-box-fill"></i> </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="member d-flex align-items-start">
-                        <div class="pic"><img src="<?php echo arsha_assets_path('assets/img/team/team-4.jpg') ?>" class="img-fluid" alt=""></div>
-                        <div class="member-info">
-                            <h4>Amanda Jepson</h4>
-                            <span>Accountant</span>
-                            <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
-                            <div class="social">
-                                <a href=""><i class="ri-twitter-fill"></i></a>
-                                <a href=""><i class="ri-facebook-fill"></i></a>
-                                <a href=""><i class="ri-instagram-fill"></i></a>
-                                <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                    <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="member d-flex align-items-start">
+                            <div class="pic"><img src="<?php echo get_field('photo', $team[3]->ID)['url'] ?>" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4><?php echo get_the_title($team[3]->ID) ?></h4>
+                                <span><?php echo get_field('job_position', $team[3]->ID) ?></span>
+                                <p><?php echo get_field('description', $team[3]->ID) ?></p>
+                                <div class="social">
+                                    <a href="<?php echo get_field('twitter_link', $team[3]->ID) ?>"><i class="ri-twitter-fill"></i></a>
+                                    <a href="<?php echo get_field('facebook_link', $team[3]->ID) ?>"><i class="ri-facebook-fill"></i></a>
+                                    <a href="<?php echo get_field('instagram_link', $team[3]->ID) ?>"><i class="ri-instagram-fill"></i></a>
+                                    <a href="<?php echo get_field('linkedin_link', $team[3]->ID) ?>"> <i class="ri-linkedin-box-fill"></i> </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-            </div>
+                </div>
+            <?php endif; ?>
 
         </div>
     </section><!-- End Team Section -->
@@ -392,58 +396,89 @@
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
-                <h2>Pricing</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                <?php echo get_post(179)->post_content ?>
             </div>
+            <?php $pricing_plans = get_posts(['post_type' => 'pricing_plans', 'numberposts' => 3]);
+            if (!empty($pricing_plans)) :
+            ?>
 
-            <div class="row">
+                <div class="row">
 
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="box">
-                        <h3>Free Plan</h3>
-                        <h4><sup>$</sup>0<span>per month</span></h4>
-                        <ul>
-                            <li><i class="bx bx-check"></i> Quam adipiscing vitae proin</li>
-                            <li><i class="bx bx-check"></i> Nec feugiat nisl pretium</li>
-                            <li><i class="bx bx-check"></i> Nulla at volutpat diam uteera</li>
-                            <li class="na"><i class="bx bx-x"></i> <span>Pharetra massa massa ultricies</span></li>
-                            <li class="na"><i class="bx bx-x"></i> <span>Massa ultricies mi quis hendrerit</span></li>
-                        </ul>
-                        <a href="#" class="buy-btn">Get Started</a>
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="box">
+                            <h3><?php echo get_the_title($pricing_plans[0]->ID) ?></h3>
+                            <h4><sup>$</sup><?php echo get_field('price', $pricing_plans[0]->ID) ?><span>per month</span></h4>
+                            <ul>
+                                <?php
+                                $benefits = preg_split('/\r\n|\r|\n/',  get_field('benefits', $pricing_plans[0]->ID));
+                                if (!empty(array_filter($benefits))) :
+                                    foreach ($benefits as $ben) : ?>
+                                        <li><i class="bx bx-check"></i><?php echo $ben ?></li>
+                                <?php endforeach;
+                                endif; ?>
+                                <?php
+                                $crossed_benefits = preg_split('/\r\n|\r|\n/', get_field('crossed_benefits', $pricing_plans[0]->ID));
+                                if (!empty(array_filter($crossed_benefits))) :
+                                    foreach ($crossed_benefits as $cr_ben) : ?>
+                                        <li class="na"><i class="bx bx-x"></i> <span><?php echo $cr_ben ?></span></li>
+                                <?php endforeach;
+                                endif;
+                                ?>
+                            </ul>
+                            <a href="<?php echo get_field('get_started_link', $pricing_plans[0]->ID) ?>" class="buy-btn">Get Started</a>
+                        </div>
                     </div>
-                </div>
 
-                <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="200">
-                    <div class="box featured">
-                        <h3>Business Plan</h3>
-                        <h4><sup>$</sup>29<span>per month</span></h4>
-                        <ul>
-                            <li><i class="bx bx-check"></i> Quam adipiscing vitae proin</li>
-                            <li><i class="bx bx-check"></i> Nec feugiat nisl pretium</li>
-                            <li><i class="bx bx-check"></i> Nulla at volutpat diam uteera</li>
-                            <li><i class="bx bx-check"></i> Pharetra massa massa ultricies</li>
-                            <li><i class="bx bx-check"></i> Massa ultricies mi quis hendrerit</li>
-                        </ul>
-                        <a href="#" class="buy-btn">Get Started</a>
+                    <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="200">
+                        <div class="box featured">
+                            <h3><?php echo get_the_title($pricing_plans[1]->ID) ?></h3>
+                            <h4><sup>$</sup><?php echo get_field('price', $pricing_plans[1]->ID) ?><span>per month</span></h4>
+                            <ul>
+                                <?php
+                                $benefits = preg_split('/\r\n|\r|\n/',  get_field('benefits', $pricing_plans[1]->ID));
+                                if (!empty(array_filter($benefits))) :
+                                    foreach ($benefits as $ben) : ?>
+                                        <li><i class="bx bx-check"></i><?php echo $ben ?></li>
+                                <?php endforeach;
+                                endif; ?>
+                                <?php
+                                $crossed_benefits = preg_split('/\r\n|\r|\n/', get_field('crossed_benefits', $pricing_plans[1]->ID));
+                                if (!empty(array_filter($crossed_benefits))) :
+                                    foreach ($crossed_benefits as $cr_ben) : ?>
+                                        <li class="na"><i class="bx bx-x"></i> <span><?php echo $cr_ben ?></span></li>
+                                <?php endforeach;
+                                endif; ?>
+                            </ul>
+                            <a href="<?php echo get_field('get_started_link', $pricing_plans[1]->ID) ?>" class="buy-btn">Get Started</a>
+                        </div>
                     </div>
-                </div>
 
-                <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
-                    <div class="box">
-                        <h3>Developer Plan</h3>
-                        <h4><sup>$</sup>49<span>per month</span></h4>
-                        <ul>
-                            <li><i class="bx bx-check"></i> Quam adipiscing vitae proin</li>
-                            <li><i class="bx bx-check"></i> Nec feugiat nisl pretium</li>
-                            <li><i class="bx bx-check"></i> Nulla at volutpat diam uteera</li>
-                            <li><i class="bx bx-check"></i> Pharetra massa massa ultricies</li>
-                            <li><i class="bx bx-check"></i> Massa ultricies mi quis hendrerit</li>
-                        </ul>
-                        <a href="#" class="buy-btn">Get Started</a>
+                    <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
+                        <div class="box">
+                            <h3><?php echo get_the_title($pricing_plans[2]->ID) ?></h3>
+                            <h4><sup>$</sup><?php echo get_field('price', $pricing_plans[2]->ID) ?><span>per month</span></h4>
+                            <ul>
+                                <?php
+                                $benefits = preg_split('/\r\n|\r|\n/',  get_field('benefits', $pricing_plans[2]->ID));
+                                if (!empty(array_filter($benefits))) :
+                                    foreach ($benefits as $ben) : ?>
+                                        <li><i class="bx bx-check"></i><?php echo $ben ?></li>
+                                <?php endforeach;
+                                endif; ?>
+                                <?php
+                                $crossed_benefits = preg_split('/\r\n|\r|\n/', get_field('crossed_benefits', $pricing_plans[2]->ID));
+                                if (!empty(array_filter($crossed_benefits))) :
+                                    foreach ($crossed_benefits as $cr_ben) : ?>
+                                        <li class="na"><i class="bx bx-x"></i> <span><?php echo $cr_ben ?></span></li>
+                                <?php endforeach;
+                                endif; ?>
+                            </ul>
+                            <a href="<?php echo get_field('get_started_link', $pricing_plans[2]->ID) ?>" class="buy-btn">Get Started</a>
+                        </div>
                     </div>
-                </div>
 
-            </div>
+                </div>
+            <?php endif; ?>
 
         </div>
     </section><!-- End Pricing Section -->

@@ -220,6 +220,52 @@ function arsha_register_types()
         'public'                => true,
         'hierarchical'          => true,
     ]);
+
+    register_post_type('team_members', [
+        'labels' => [
+            'name'               => 'Team members',
+            'singular_name'      => 'Team member',
+            'add_new'            => 'Add team member',
+            'add_new_item'       => 'Add team member',
+            'edit_item'          => 'Edit team member',
+            'new_item'           => 'New team member',
+            'view_item'          => 'View team member',
+            'search_items'       => 'Search team members',
+            'not_found'          => 'No team members found',
+            'not_found_in_trash' => 'No team members in trash',
+            'parent_item_colon'  => '',
+            'menu_name'          => 'Team members',
+        ],
+        'public'                 => true,
+        'menu_position'       => 20,
+        'menu_icon'           => 'dashicons-admin-users',
+        'hierarchical'        => false,
+        'supports'            => ['title'], // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+        'has_archive'         => true
+    ]);
+
+    register_post_type('pricing_plans', [
+        'labels' => [
+            'name'               => 'Pricing plans',
+            'singular_name'      => 'Pricing plan',
+            'add_new'            => 'Add pricing plan',
+            'add_new_item'       => 'Add pricing plan',
+            'edit_item'          => 'Edit pricing plan',
+            'new_item'           => 'New pricing plan',
+            'view_item'          => 'View pricing plans',
+            'search_items'       => 'Search pricing plans',
+            'not_found'          => 'No pricing plans found',
+            'not_found_in_trash' => 'No pricing plans in trash',
+            'parent_item_colon'  => '',
+            'menu_name'          => 'Pricing plans',
+        ],
+        'public'                 => true,
+        'menu_position'       => 20,
+        'menu_icon'           => 'dashicons-tag',
+        'hierarchical'        => false,
+        'supports'            => ['title'], // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+        'has_archive'         => true
+    ]);
 }
 
 
